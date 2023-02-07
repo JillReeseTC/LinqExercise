@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 
 namespace LinqExercise
@@ -20,15 +21,58 @@ namespace LinqExercise
              * 
              */
 
-            //TODO: Print the Sum of numbers
+            //Print the Sum of numbers
+            List<int> numberList = new List<int>();
 
-            //TODO: Print the Average of numbers
+            foreach (int number in numbers)
+            {
+                numberList.Add(numbers[number]);
+            }
 
-            //TODO: Order numbers in ascending order and print to the console
+            //Print the Sum of numbers
+            var sum = numberList.Sum();
+            Console.WriteLine($"The sum of the list is {sum}");
+            Console.WriteLine();
 
-            //TODO: Order numbers in decsending order and print to the console
+            //Print the Average of numbers
+            var average = numbers.Average();
 
-            //TODO: Print to the console only the numbers greater than 6
+            Console.WriteLine($"The average of the list is {average}");
+            Console.WriteLine();
+
+            //Order numbers in descending order and print to the console
+            Console.WriteLine($"List in descending order: ");
+
+            var numberListDSC = numberList.OrderByDescending(x => x);
+            foreach (var i in numberListDSC) 
+            {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //Order numbers in decsending order and print to the console
+            Console.WriteLine($"List in ascending order: ");
+
+            var numberListASC = numberList.OrderBy(x => x);
+            foreach (var j in numberListASC)
+            {
+                Console.Write($"{j} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //Print to the console only the numbers greater than 6
+            Console.WriteLine("Print out numbers in list greater than 6:");
+            var numGrt6 = numbers.Where(x => x > 6);
+            foreach (var k in numGrt6)
+            {
+                Console.Write($"{k} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+
 
             //TODO: Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
 
