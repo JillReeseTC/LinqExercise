@@ -72,11 +72,32 @@ namespace LinqExercise
             Console.WriteLine();
             Console.WriteLine();
 
+            //Order numbers in any order (acsending or desc) but only print 4
+            //of them **foreach loop only!**
+            Console.WriteLine("Print out first 4 elements:");
+            var numFirst4 = numbers.Take(4);
+            foreach (var m in numFirst4)
+            {
+                Console.Write($"{m} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //TODO: Change the value at index 4 to your age, then print the
+            //numbers in descending order
+            Console.WriteLine("Print out age at index[4] and list descending:");
+            numbers[4] = 58;
+            var numAgeDesc = numbers.OrderByDescending(x => x);
+            foreach (var n in numAgeDesc)
+            {
+                Console.Write($"{n} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
 
 
-            //TODO: Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
 
-            //TODO: Change the value at index 4 to your age, then print the numbers in decsending order
+
 
             // List of employees ****Do not remove this****
             var employees = CreateEmployees();
