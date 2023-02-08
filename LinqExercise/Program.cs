@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO.Compression;
 using System.Linq;
 
@@ -102,9 +103,35 @@ namespace LinqExercise
             // List of employees ****Do not remove this****
             var employees = CreateEmployees();
 
-            //TODO: Print all the employees' FullName properties to the console only if their FirstName starts with a C OR an S and order this in ascending order by FirstName.
+            //Print all the employees' FullName properties to the
+            //console only if their FirstName starts with a
+            //C OR an S and order this in ascending order by FirstName.
+            Console.WriteLine("Print C or S FirstName employees to console: ");
+            var chosen =
+                employees.Where(f => f.FirstName.StartsWith('C') || f.FirstName.StartsWith('S')).OrderBy(f => f.FirstName);
 
-            //TODO: Print all the employees' FullName and Age who are over the age 26 to the console and order this by Age first and then by FirstName in the same result.
+            foreach (var item in chosen)
+            {
+                Console.WriteLine(item.FullName);
+            }
+            Console.WriteLine();
+
+            //Print all the employees' FullName and Age who are over the age 26
+            //to the console and order this by Age first and then by
+            //FirstName in the same result.
+            Console.WriteLine("Print FullName employees to console: ");
+            var chosen2 =
+                employees.Where(f => f.Age > 26).OrderBy(f => f.Age).OrderBy(f => f.FirstName);
+
+            foreach (var item in chosen2)
+            {
+                Console.WriteLine($"{item.FullName}, { item.Age}");
+            }
+            Console.WriteLine();
+
+
+
+
 
             //TODO: Print the Sum and then the Average of the employees' YearsOfExperience if their YOE is less than or equal to 10 AND Age is greater than 35.
 
