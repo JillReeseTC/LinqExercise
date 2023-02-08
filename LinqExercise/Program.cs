@@ -131,9 +131,25 @@ namespace LinqExercise
 
             //Print the Sum and then the Average of the employees' YearsOfExperience
             //if their YOE is less than or equal to 10 AND Age is greater than 35.
+            Console.WriteLine("Print Sum and Avg of Years Of Experience < 10 employees over 35 to console: ");
+            var chosen3 =
+                employees.Where(f => f.Age > 35 && f.YearsOfExperience <=10);
 
+            foreach (var item in chosen3)
+            {
+                Console.WriteLine($"{item.FullName}, {item.Age}, Experience = {item.YearsOfExperience}");
+            }
+            Console.WriteLine($"Sum of Experience of Employees over 35: {chosen3.Sum(f => f.YearsOfExperience)}");
+            Console.WriteLine($"Avg of Experience of Employees over 35: {Math.Round(chosen3.Average(f => f.YearsOfExperience), 2)}");
+            Console.WriteLine();
 
-            //TODO: Add an employee to the end of the list without using employees.Add()
+            //Add an employee to the end of the list without using employees.Add()
+            Console.WriteLine("Add an employee to the list: ");
+            employees = employees.Append(new Employee("Jill", "Reese", 58, 7)).ToList();
+            foreach (var item in employees)
+            {
+                Console.WriteLine($"{item.FullName}, \tAge: {item.Age}, Years of Experience: {item.YearsOfExperience}");
+            }
 
 
             Console.WriteLine();
