@@ -84,7 +84,7 @@ namespace LinqExercise
             Console.WriteLine();
             Console.WriteLine();
 
-            //TODO: Change the value at index 4 to your age, then print the
+            //Change the value at index 4 to your age, then print the
             //numbers in descending order
             Console.WriteLine("Print out age at index[4] and list descending:");
             numbers[4] = 58;
